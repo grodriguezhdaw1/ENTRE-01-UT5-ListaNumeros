@@ -40,9 +40,9 @@ public class ListaNumeros
     {
         if(pos + 1 <= TAM_LISTA){
             pos += 1;
-            
+
             numeros[pos]=numero;
-        
+
             return true;
         } 
         return false;
@@ -90,14 +90,14 @@ public class ListaNumeros
      */
     public boolean estaElemento(int numero) 
     {
-        
+
         boolean resultado = false;
         for(int i = 0; i < pos; i++){
-        
+
             resultado = numero == numeros[i];
-        
+
         }
-        
+
         return resultado;
     }
 
@@ -111,14 +111,12 @@ public class ListaNumeros
     public String toString() 
     {
         String resultado = "";
-        
+
         for(int i = 0; i < pos; i++){
-        
+
             resultado += "| " + numeros[i] + " | ";
-            
-        
+
         }
-        
         return resultado;
     }
 
@@ -143,9 +141,19 @@ public class ListaNumeros
      * (ver detalles en el enunciado)
      */
     public int[] expandir() {
-         
 
-        return null;
+        int[] resultado = new int[pos * pos];
+        int pos2 = 1;
+        if(pos % 2 == 0){
+            while(pos2 == pos -1){
+                for(int i = 0; i < numeros[pos2]; i++){
+                    resultado[i]= pos2 + 1;
+                }
+
+            }
+
+        }
+        return resultado;
     }
 
     /**
@@ -166,10 +174,8 @@ public class ListaNumeros
      *  después de reorganizarParesImpares() quedaría {4, 2, 8, 3, 7, 9, 5, 11, 13}
      */
     public void reorganizarParesImpares() {
-         
 
     }
-
      
     /**
      *  Usando métodos de la clase Arrays haz una copia 
@@ -179,7 +185,7 @@ public class ListaNumeros
      *  que incluya los elementos del array ordenado
      */
     public ListaNumeros nuevaLista() {
-         
+
         return null;
 
     }
@@ -197,7 +203,7 @@ public class ListaNumeros
      */
     public int[][] toArray2D() 
     {
-        
+
         return null;
     }
 
@@ -221,8 +227,7 @@ public class ListaNumeros
         int[] expandido = numeros.expandir();
         System.out.println("Expandido: " + Arrays.toString(expandido));
         // seguir completando
-        
-        
+
         
     }
 }
