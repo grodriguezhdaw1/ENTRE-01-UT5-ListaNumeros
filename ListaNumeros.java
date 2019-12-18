@@ -38,8 +38,14 @@ public class ListaNumeros
      */
     public boolean addElemento(int numero)
     {
+        if(pos + 1 <= TAM_LISTA){
+            pos += 1;
+            
+            numeros[pos]=numero;
         
-        return true;
+            return true;
+        } 
+        return false;
 
     }
 
@@ -48,7 +54,7 @@ public class ListaNumeros
      */
     public boolean estaCompleta()
     {
-        return true;
+        return pos == TAM_LISTA;
 
     }
 
@@ -57,7 +63,7 @@ public class ListaNumeros
      */
     public boolean estaVacia() 
     {
-        return true;
+        return pos == 0;
 
     }
 
@@ -66,7 +72,7 @@ public class ListaNumeros
      */
     public int getTotalNumeros()
     {
-        return 0;
+        return pos;
 
     }
 
@@ -75,7 +81,7 @@ public class ListaNumeros
      */
     public void vaciarLista() 
     {
-        
+        pos = 0;
     }
 
     /**
@@ -85,7 +91,14 @@ public class ListaNumeros
     public boolean estaElemento(int numero) 
     {
         
-        return false;
+        boolean resultado = false;
+        for(int i = 0; i < pos; i++){
+        
+            resultado = numero == numeros[i];
+        
+        }
+        
+        return resultado;
     }
 
     /**
@@ -97,8 +110,16 @@ public class ListaNumeros
      */
     public String toString() 
     {
+        String resultado = "";
         
-        return null;
+        for(int i = 0; i < pos; i++){
+        
+            resultado += "| " + numeros[i] + " | ";
+            
+        
+        }
+        
+        return resultado;
     }
 
     /**
